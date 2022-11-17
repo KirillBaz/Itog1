@@ -15,3 +15,28 @@ for (int j = 0; j < size1-1; j++)
 Console.WriteLine($"{array1[size1-1]}]");
 return array1;
 }
+string[] CreateNewArray(string[] originalArray)
+{
+    int newSize = 0;
+    for (int i = 0; i < originalArray.Length; i++)
+    {
+        if (originalArray[i].Length<=3)
+        {
+            newSize++;
+        } 
+    }
+    var newArray = new string[newSize]; 
+    for (int j = 0; j < newSize; j++)
+    {
+        for (int k = 0; k < originalArray.Length; k++)
+        {
+            if (originalArray[k].Length<=3) 
+            {
+                newArray[j]=originalArray[k];
+                originalArray[k]=originalArray[k]+"    ";
+                break;
+            }
+        }
+    }
+return newArray;
+}
