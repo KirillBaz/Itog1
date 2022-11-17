@@ -40,3 +40,10 @@ string[] CreateNewArray(string[] originalArray)
     }
 return newArray;
 }
+void PrintNewArray(string[] changedArray)
+{
+Console.Write("Новый массив: [");
+for (int i = 0; i < changedArray.Length-1; i++) Console.Write($"{changedArray[i]}, ");
+Console.Write(changedArray[changedArray.Length-1]+"]");
+}
+PrintNewArray(CreateNewArray(EnterArray(4)));
